@@ -1,101 +1,61 @@
 # Flask Color App
 
-## Description
-
-This is a simple Flask web application that displays a webpage with a background color based on the environment variable `APP_COLOR`.
-
-If `APP_COLOR` is not set, the application uses **white** as the default color.
-
----
+A simple Flask web application that changes the background color of the page based on the `APP_COLOR` environment variable.
 
 ## Features
 
-* Built using Python Flask
-* Reads color from environment variable `APP_COLOR`
-* Supports colors such as:
-
-  * red
-  * green
-  * blue
-  * yellow
-  * white
-* Uses a default color when the variable is not provided
-
----
+* Reads the `APP_COLOR` environment variable.
+* Changes the page background color accordingly.
+* Uses `white` as the default color if `APP_COLOR` is not set.
+* Containerized using Docker.
 
 ## Requirements
 
 * Python 3.13
 * Flask
+* Docker Desktop
 
----
+## Run Locally
 
-## Installation
+1. Clone the repository.
 
-1. Clone the repository:
+2. Install dependencies:
 
-```bash
-git clone <repository-url>
-```
-
-2. Navigate to the project folder:
-
-```bash
-cd flask-color-app
-```
-
-3. Create a virtual environment:
-
-```bash
-python -m venv venv
-```
-
-4. Activate the virtual environment:
-
-Windows:
-
-```bash
-.\venv\Scripts\activate
-```
-
-5. Install dependencies:
-
-```bash
 pip install -r requirements.txt
-```
 
----
+3. Run the application:
 
-## Running the Application
-
-Set the environment variable:
-
-```powershell
-$env:APP_COLOR="red"
-```
-
-Run the application:
-
-```bash
 python app.py
-```
 
-Open the browser and visit:
+4. Open:
 
-```text
-http://127.0.0.1:5000
-```
-
----
+http://localhost:5000
 
 ## Environment Variables
 
-| Variable  | Description                     | Default |
-| --------- | ------------------------------- | ------- |
-| APP_COLOR | Background color of the webpage | white   |
+| Variable  | Description                  | Default |
+| --------- | ---------------------------- | ------- |
+| APP_COLOR | Background color of the page | white   |
 
----
+Example:
+
+APP_COLOR=red
+
+## Run with Docker
+
+Build the image:
+
+docker build -t flask-color-app .
+
+Run the container:
+
+docker run -e APP_COLOR=green -p 5000:5000 flask-color-app
+
+Open:
+
+http://localhost:5000
 
 ## Authors
 
 Samikshaa and Nasrin
+
