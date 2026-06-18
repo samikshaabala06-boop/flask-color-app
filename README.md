@@ -70,6 +70,5 @@ flask-color-app/
 
 ## Authors
 
--Samikshaa
--Nasrin
-
+- Samikshaa
+- Nasrin
