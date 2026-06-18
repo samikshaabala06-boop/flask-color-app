@@ -51,11 +51,25 @@ Run the container:
 
 docker run -e APP_COLOR=green -p 5000:5000 flask-color-app
 
+This project uses a lightweight Docker base image: python:3.13-slim
+
 Open:
 
 http://localhost:5000
 
+## Project Structure
+
+flask-color-app/
+├── app.py
+├── requirements.txt
+├── README.md
+├── .gitignore
+├── Dockerfile
+└── .dockerignore
+
+
 ## Authors
 
-Samikshaa and Nasrin
+-Samikshaa
+-Nasrin
 
