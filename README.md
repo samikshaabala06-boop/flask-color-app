@@ -67,6 +67,8 @@ flask-color-app/
 ├── Dockerfile
 └── .dockerignore
 
+CI/CD pipeline configured using GitHub Actions.
+
 
 ## Authors
 
