@@ -69,6 +69,57 @@ flask-color-app/
 
 CI/CD pipeline configured using GitHub Actions.
 
+## AWS Deployment
+
+The Docker image was pushed to Amazon Elastic Container Registry (ECR) and deployed on an Amazon EC2 instance.
+
+### AWS Services Used
+
+* Amazon ECR for storing Docker images
+* Amazon EC2 for hosting the application
+* Security Groups for allowing HTTP access
+
+### ECR Repository
+
+064123638482.dkr.ecr.us-east-1.amazonaws.com/flask-color-app
+
+### Deployment Steps
+
+1. Created an EC2 instance using Amazon Linux 2023.
+2. Installed Docker on the EC2 instance.
+3. Configured AWS CLI on the EC2 instance.
+4. Logged in to Amazon ECR.
+5. Pulled the Docker image from ECR.
+6. Ran the Docker container using:
+
+sudo docker run -d -e APP_COLOR=green -p 80:5000 064123638482.dkr.ecr.us-east-1.amazonaws.com/flask-color-app:latest
+
+7. Accessed the application through the EC2 Public IPv4 address.
+
+---
+
+## CI/CD Pipeline
+
+GitHub Actions was configured to automate Docker image creation and publishing.
+
+### Workflow
+
+Git Push
+→ GitHub Actions
+→ Build Docker Image
+→ Login to Amazon ECR
+→ Tag Docker Image
+→ Push Docker Image to ECR
+
+### Workflow File
+
+.github/workflows/deploy.yml
+
+### Current Status
+
+The workflow automatically builds the Docker image and pushes it to Amazon ECR whenever code is pushed to the main branch.
+
+
 
 ## Authors
 
