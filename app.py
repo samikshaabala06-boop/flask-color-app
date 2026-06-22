@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    color = os.getenv("APP_COLOR", "white")
+    color = os.getenv("APP_COLOR", "lavender")
 
     return f"""
     <body style="background-color:{color};">
