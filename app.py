@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
 
-    color = os.getenv("APP_COLOR", "lavender")
+    color = os.getenv("APP_COLOR", "white")
 
     return f"""
     <body style="background-color:{color};">
@@ -25,3 +25,4 @@ def home():
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
+    
